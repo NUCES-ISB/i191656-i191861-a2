@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>IBM Stock Prediction</title>
+    
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  </head>
+  <body>
+    <h1>IBM Stock Prediction</h1>
+    <p>Open: {{ open }}</p>
+    <p>High: {{ high }}</p>
+    <p>Low: {{ low }}</p>
+    <p>Volume: {{ volume }}</p>
+    <h2>Predicted Stock Price:</h2>
+    <p>{{ output }}</p>
+    
+    <div id="plot"></div>
+    
+    <script>
+
+      var graphDiv = document.getElementById('plot');
+      
+      Plotly.newPlot(graphDiv, '{{ graph|safe }}', {title: 'Live Dashboard', xaxis: {title: 'Time'}, yaxis: {title: 'Price'}});
+    </script>
+  </body>
+</html>
