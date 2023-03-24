@@ -9,12 +9,5 @@ pipeline {
 	    	}
 	    }
 	}
-        stage('Run Server') {
-            steps {
-		script {
-		    bat "docker exec ${CONTAINER_ID} python app.py"
-            	}
-	    }
-        }
     }
 }
