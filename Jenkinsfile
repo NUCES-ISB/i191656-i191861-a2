@@ -5,7 +5,7 @@ pipeline {
 	    steps {
 		script {
 	            bat 'docker build -t flask_image .'
-	            CONTAINER_ID = bat(script: '@docker run -d flask_image -p 5000:5000', returnStdout: true).trim()	
+	            bat 'docker run -d -p 5000:5000 flask_image'
 	    	}
 	    }
 	}
