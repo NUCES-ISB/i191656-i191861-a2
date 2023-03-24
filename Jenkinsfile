@@ -9,5 +9,13 @@ pipeline {
 	    	}
 	    }
 	}
+	stage('Push to DockerHub') {
+	    steps {
+		script {
+	            bat 'docker tag flask_image i191656/mlops_repo:flask_image'
+	            bat 'docker push i191656/mlops_repo:flask_image'
+	    	}
+	    }
+	}
     }
 }
