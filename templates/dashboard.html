@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block imports %}
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+{% endblock %}
+
+{% block content %}
+    <h1>IBM Stock Prediction</h1>
+    <p>Open: {{ open }}</p>
+    <p>High: {{ high }}</p>
+    <p>Low: {{ low }}</p>
+    <p>Volume: {{ volume }}</p>
+    <h2>Predicted Closing Stock Price:</h2>
+    <p>{{ output }}</p>
+    <div id="plot"></div>
+{% endblock %}
+
+{% block scripts %} 
+<script>
+   var graphDiv = document.getElementById('plot');
+   var chart = {{ graphJSON | safe }};
+   var data = chart["data"];
+   var layout = chart["layout"];
+   var config = {responsive: true};
+   Plotly.newPlot(graphDiv, data, layout, config);
+</script>
+{% endblock %}

@@ -1,0 +1,30 @@
+h1 {
+   text-align: center;
+   padding: 10px;
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.navdiv {
+  background-color: black;
+  overflow: auto;
+  margin: 0;
+}
+
+.navdiv a:link, a:visited, a:active {
+  float: left;
+  color: white;
+  background-color: red;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  margin: 0;
+  padding: 10px;
+}
+
+.navdiv a:hover {
+  background-color: white;
+  color: black;
+}

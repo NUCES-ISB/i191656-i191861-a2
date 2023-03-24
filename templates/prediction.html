@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <br>
+    <form action="{{ url_for('prediction')}}" method="post" style="display: table">
+        <p style="display: table-row">
+        <label for="open" style="display: table-cell">Open Price</label>
+        <input name="open" id="open" style="display: table-cell">
+        </p>
+        <br>
+        <p style="display: table-row">
+        <label for="high" style="display: table-cell">High Price</label>
+        <input name="high" id="high" style="display: table-cell">
+        </p>
+        <br>
+        <p style="display: table-row">
+        <label for="low" style="display: table-cell">Low Price</label>
+        <input name="low" id="low" style="display: table-cell">
+        </p>
+        <br>
+        <p style="display: table-row">
+        <label for="volume" style="display: table-cell">Volume</label>
+        <input name="volume" id="volume" style="display: table-cell">
+        </p>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+    <div id="result"></div>
+{% endblock %}
+
+{% block scripts %} 
+<script>
+   var resultDiv = document.getElementById('result');
+   resultDiv.innerHTML = "<h1> Closing Stock Price Prediction: {{ result }} </h1>"
+</script>
+{% endblock %}
